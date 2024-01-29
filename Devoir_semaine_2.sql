@@ -9,3 +9,6 @@ SELECT title, price FROM titles WHERE (title LIKE 'SU%' OR title LIKE 'BU%') ORD
 
 -- exercice 4
 SELECT title, price FROM titles WHERE title_id NOT LIKE 'SU%' AND title_id NOT LIKE 'BU%';
+
+-- exercice 5
+SELECT title, price FROM titles WHERE title NOT LIKE 'S%' AND title NOT LIKE 'B%' AND title LIKE '_o%' ORDER BY title;
