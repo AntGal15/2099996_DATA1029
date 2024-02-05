@@ -31,3 +31,9 @@ group by job_lvl;
 select e.fname as EmployeeFirstName, e.lname as EmployeeLastName, p.pub_name as PublisherName
 from employees e
 join publishers p on e.pub_id = p.pub_id;
+
+-- Exercice 7
+select p.pub_name as PublisherName, avg(e.salary) as AverageSalary
+from employees e
+join publishers p on e.pub_id = p.pub_id
+group by p.pub_name;
