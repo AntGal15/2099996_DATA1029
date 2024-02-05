@@ -21,3 +21,8 @@ union
 select a.au_fname, a.au_lname, p.pub_name, p.city
 from publishers p
 left join authors a on p.city = a.city;
+
+-- Exercice 5
+select job_lvl, count(*) as EmployeeCount
+from employees
+group by job_lvl;
