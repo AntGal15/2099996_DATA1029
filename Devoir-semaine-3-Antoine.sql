@@ -37,3 +37,11 @@ select p.pub_name as PublisherName, avg(e.salary) as AverageSalary
 from employees e
 join publishers p on e.pub_id = p.pub_id
 group by p.pub_name;
+
+-- Exercice 8 (A NOTÉ: dans la base de donné, le mot senior etais écrit comme seinior, j'ai du modifier le code donné 
+-- library_03_02_24 pour que l'exercice 8 fonctionne)
+select p.pub_name as PublisherName, count(*) as SeniorEmployeeCount
+from employees e
+join publishers p on e.pub_id = p.pub_id
+where e.job_lvl = 'senior'
+group by p.pub_name;
