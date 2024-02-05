@@ -26,3 +26,8 @@ left join authors a on p.city = a.city;
 select job_lvl, count(*) as EmployeeCount
 from employees
 group by job_lvl;
+
+-- Exercice 6
+select e.fname as EmployeeFirstName, e.lname as EmployeeLastName, p.pub_name as PublisherName
+from employees e
+join publishers p on e.pub_id = p.pub_id;
