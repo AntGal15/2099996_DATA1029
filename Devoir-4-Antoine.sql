@@ -28,4 +28,4 @@ where t.advance > (
     from titles t
     join publishers p on t.pub_id = p.pub_id
     where p.pub_name = 'Harmattan'
-)
+);
