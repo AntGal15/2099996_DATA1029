@@ -68,3 +68,13 @@ create table Redactions (
     royalty float,
     primary key (au_id, title_id)
 );
+
+-- table Sales
+create table Sales (
+    store_id tinyint references Stores(stor_id),
+    ord_num tinyint,
+    title_id smallint references Titles(title_id),
+    ord_date datetime,
+    qty int,
+    primary key (store_id, ord_num, title_id)
+);
