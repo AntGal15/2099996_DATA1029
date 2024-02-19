@@ -34,3 +34,16 @@ create table Jobs (
     min_lvl enum('Stagiaire', 'Junior', 'Intermediaire', 'Seinior'),
     max_lvl enum('Stagiaire', 'Junior', 'Intermediaire', 'Seinior')
 );
+
+-- table Employees
+create table Employees (
+    emp_id tinyint auto_increment primary key,
+    emp_name varchar(50),
+    salary smallint,
+    fname varchar(50),
+    lname varchar(50),
+    job_id smallint references Jobs(job_id),
+    pub_id smallint references Publishers(pub_id),
+    pub_date date,
+    email varchar(50) unique check (email like '%@%')
+);
