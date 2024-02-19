@@ -78,3 +78,13 @@ create table Sales (
     qty int,
     primary key (store_id, ord_num, title_id)
 );
+
+-- table Stores
+create table Stores (
+    stor_id tinyint auto_increment primary key,
+    stor_name varchar(50),
+    stor_address varchar(50),
+    city varchar(50),
+    state varchar(50),
+    country varchar(50)
+);
