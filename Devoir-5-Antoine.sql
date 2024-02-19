@@ -26,3 +26,11 @@ create table Publishers (
     country varchar(50),
     email varchar(50) unique check (email like '%@%')
 );
+
+-- table Jobs
+create table Jobs (
+    job_id tinyint auto_increment primary key,
+    job_desc varchar(50),
+    min_lvl enum('Stagiaire', 'Junior', 'Intermediaire', 'Seinior'),
+    max_lvl enum('Stagiaire', 'Junior', 'Intermediaire', 'Seinior')
+);
