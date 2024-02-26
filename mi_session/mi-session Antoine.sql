@@ -20,3 +20,12 @@ select p.name
 from product p
 join supplier s on s.id = p.supplier_id
 where s.city = "Moncton";
+
+-- Questions bonus (20points)
+-- 4. Qui a passé le plus de temps une fois connecté dans l’application (10 points) ?
+select distinct u.full_name
+from user u
+join connection_history ch on ch.user_id = u.id
+where ch.onsite_time = max(ch.onsite_time);
+
+-- 5.Quel est le dernier utilisateur à se déconnecter ? (10 points)
