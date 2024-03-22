@@ -40,3 +40,11 @@ from employees
 join publishers on employees.pub_id = publishers.pub_id
 where employees.job_lvl != 'SEINIOR'
 order by publishers.pub_name;
+
+-- 7.Noms complets des employés qui ont un salaire au-dessus de la moyenne de salaire chez leur employeur.
+select CONCAT(fname, ' ', lname) as "Nom complet", salary
+from employees
+where salary > (
+	select avg(salary) 
+    from employees 
+    where emp_id = employees.emp_id);
