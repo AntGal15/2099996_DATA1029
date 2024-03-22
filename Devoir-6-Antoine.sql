@@ -83,3 +83,9 @@ join titleauthor ta on a.au_id = ta.au_id
 join titles t on ta.title_id = t.title_id
 order by t.ytd_sales desc
 limit 5;
+
+-- 12.Prix moyens des livres par maisons d’édition.
+select pub_name, avg(price) as avg_price
+from titles
+join publishers on titles.pub_id = publishers.pub_id
+group by pub_name;
