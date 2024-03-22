@@ -33,3 +33,10 @@ select CONCAT(e.fname, ' ', e.lname) as "Nom complet", p.pub_name
 from employees e
 join publishers p on e.pub_id = p.pub_id
 where p.country = 'Canada';
+
+-- 6.Noms complets des employés qui ont un manager.
+select CONCAT(employees.fname, ' ', employees.lname) as "Nom complet", publishers.pub_name
+from employees
+join publishers on employees.pub_id = publishers.pub_id
+where employees.job_lvl != 'SEINIOR'
+order by publishers.pub_name;
