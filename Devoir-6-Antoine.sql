@@ -48,3 +48,12 @@ where salary > (
 	select avg(salary) 
     from employees 
     where emp_id = employees.emp_id);
+    
+-- 8.Noms complets des employés qui ont le salaire minimum de leur grade
+select distinct CONCAT(fname, ' ', lname) as "Nom complet"
+from employees
+where salary = (
+    select MIN(salary)
+    from employees
+    where job_lvl = employees.job_lvl
+);
