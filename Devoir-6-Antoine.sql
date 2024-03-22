@@ -57,3 +57,10 @@ where salary = (
     from employees
     where job_lvl = employees.job_lvl
 );
+
+-- 9.De quels types sont les livres les plus vendus?
+select type, COUNT(*)
+from titles
+group by type
+order by COUNT(*) desc
+limit 1;
