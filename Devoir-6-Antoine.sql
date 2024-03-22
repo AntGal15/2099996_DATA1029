@@ -64,3 +64,14 @@ from titles
 group by type
 order by COUNT(*) desc
 limit 1;
+
+-- 10.Pour chaque boutique, les 2 livres les plus vendus et leurs prix.
+select s.stor_id, t.title, t.price
+from sales s
+join titles t on s.title_id = t.title_id
+where s.title_id in (
+    select title_id
+    from sales
+    group by title_id
+    order by SUM(qty) desc
+);
