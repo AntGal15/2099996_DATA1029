@@ -19,3 +19,11 @@ select p.pub_name, CONCAT(e.fname, ' ', e.lname) as "Nom complet"
 from employees e
 join publishers p on e.pub_id = p.pub_id
 where e.job_lvl = 'SEINIOR';
+
+-- 4.Noms complets des employés ayant un salaire supérieur à celui de Norbert Zongo.
+select CONCAT(fname, ' ', lname) AS "Nom complet", salary
+from employees
+where salary > (
+	select salary 
+	from employees 
+    where fname = 'Norbert' and lname = 'Zongo');
