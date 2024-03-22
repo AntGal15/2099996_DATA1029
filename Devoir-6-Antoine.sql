@@ -75,3 +75,11 @@ where s.title_id in (
     group by title_id
     order by SUM(qty) desc
 );
+
+-- 11.Les auteurs des 5 livres les plus vendus
+select a.au_fname, a.au_lname
+from authors a
+join titleauthor ta on a.au_id = ta.au_id
+join titles t on ta.title_id = t.title_id
+order by t.ytd_sales desc
+limit 5;
