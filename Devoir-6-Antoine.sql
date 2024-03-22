@@ -89,3 +89,11 @@ select pub_name, avg(price) as avg_price
 from titles
 join publishers on titles.pub_id = publishers.pub_id
 group by pub_name;
+
+-- 13.Les 3 auteurs ayant les plus de livres
+select CONCAT(au_fname, ' ', au_lname) as "Nom complet", COUNT(title_id)
+from authors
+join titleauthor on authors.au_id = titleauthor.au_id
+group by authors.au_id
+order by COUNT(title_id) desc
+limit 3;
