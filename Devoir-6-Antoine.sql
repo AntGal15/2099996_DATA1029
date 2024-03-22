@@ -13,3 +13,9 @@ where e.salary = (
 	from employees 
 	where pub_id = e.pub_id)
 order by p.pub_name;
+
+-- 3.Noms complets des employés de plus haut grade par employeurs.
+select p.pub_name, CONCAT(e.fname, ' ', e.lname) as "Nom complet"
+from employees e
+join publishers p on e.pub_id = p.pub_id
+where e.job_lvl = 'SEINIOR';
