@@ -27,3 +27,9 @@ where salary > (
 	select salary 
 	from employees 
     where fname = 'Norbert' and lname = 'Zongo');
+    
+-- 5.Noms complets des employés des éditeurs canadiens.
+select CONCAT(e.fname, ' ', e.lname) as "Nom complet", p.pub_name
+from employees e
+join publishers p on e.pub_id = p.pub_id
+where p.country = 'Canada';
