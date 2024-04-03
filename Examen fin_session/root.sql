@@ -39,3 +39,8 @@ GRANT UPDATE ON epharmacy.products TO 'pharma'@'localhost';
 -- apres avoir executer les commandes
 REVOKE UPDATE ON epharmacy.* FROM 'pharma'@'localhost';
 
+-- exercice 9
+GRANT ALTER ON epharmacy.users TO 'pharma'@'localhost';
+-- apres avoir executer les commandes
+REVOKE ALTER ON epharmacy.* FROM 'pharma'@'localhost';
+

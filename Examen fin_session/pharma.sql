@@ -48,3 +48,7 @@ GROUP BY w.id;
 UPDATE products
 SET image = 'medoc.jpg'
 WHERE description LIKE '%medical%' OR description LIKE '%medicinal%';
+
+-- exercice 9
+ALTER TABLE users
+ADD COLUMN gender ENUM('MALE', 'FEMALE', 'OTHER') NOT NULL;
