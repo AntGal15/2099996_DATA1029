@@ -52,3 +52,16 @@ WHERE description LIKE '%medical%' OR description LIKE '%medicinal%';
 -- exercice 9
 ALTER TABLE users
 ADD COLUMN gender ENUM('MALE', 'FEMALE', 'OTHER') NOT NULL;
+
+-- exercice 10
+DELIMITER //
+CREATE PROCEDURE spProfileImage()
+BEGIN
+    UPDATE users
+    SET image = CASE
+        WHEN designation = 'MALE' THEN 'male.jpg'
+        WHEN designation = 'FEMALE' THEN 'female.jpg'
+        ELSE 'other.jpg'
+    END;
+END//
+DELIMITER ;
