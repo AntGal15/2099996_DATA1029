@@ -19,3 +19,10 @@ GRANT SELECT ON epharmacy.connection_history TO 'pharma'@'localhost';
 GRANT SELECT ON epharmacy.roles TO 'pharma'@'localhost';
 -- apres avoir executer les commandes
 REVOKE SELECT ON epharmacy.* FROM 'pharma'@'localhost';
+
+-- exercice 6(permission seulement)
+GRANT SELECT ON epharmacy.suppliers TO 'pharma'@'localhost';
+GRANT SELECT ON epharmacy.products TO 'pharma'@'localhost';
+GRANT SELECT ON epharmacy.cart_product TO 'pharma'@'localhost';
+-- apres avoir executer les commandes
+REVOKE SELECT ON epharmacy.* FROM 'pharma'@'localhost';

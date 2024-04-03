@@ -24,3 +24,15 @@ JOIN roles r ON u.role_id = r.id
 GROUP BY r.name
 ORDER BY SUM(TIME_TO_SEC(ch.onsite_time)) DESC
 LIMIT 1;
+
+-- exercice 6
+SELECT s.name AS "Nom du supplier"
+FROM suppliers s
+JOIN products p ON s.id = p.supplier_id
+JOIN (
+    SELECT product_id, SUM(quantity) AS total_quantity
+    FROM cart_product
+    GROUP BY product_id
+    ORDER BY total_quantity DESC
+    LIMIT 3
+) cp ON p.id = cp.product_id;
