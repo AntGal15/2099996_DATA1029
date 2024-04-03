@@ -65,3 +65,7 @@ BEGIN
     END;
 END//
 DELIMITER ;
+
+-- exercice 11
+ALTER TABLE users
+ADD CONSTRAINT unique_email UNIQUE (email);

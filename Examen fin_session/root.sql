@@ -50,3 +50,8 @@ GRANT CREATE ON epharmacy.users TO 'pharma'@'localhost';
 -- apres avoir executer les commandes
 REVOKE UPDATE, CREATE ON epharmacy.* FROM 'pharma'@'localhost';
 
+-- exercice 11
+GRANT ALTER ON epharmacy.users TO 'pharma'@'localhost';
+-- apres avoir executer les commandes
+REVOKE ALTER ON epharmacy.* FROM 'pharma'@'localhost';
+
