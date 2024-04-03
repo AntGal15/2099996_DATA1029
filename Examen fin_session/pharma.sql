@@ -113,3 +113,32 @@ VALUES
 (4, 1);
 
 commit;
+
+
+-- Exercice modification des donnees
+UPDATE users SET
+designation = 'Comptable',
+adress = '415 Av. de l’Université',
+province = 'NB',
+postal_code = 'E1A3E9',
+phone = '4065954526',
+email = 'Ali@ccnb.ca'
+WHERE firstname = 'Ali' AND lastname = 'Sani';
+
+UPDATE users SET
+designation = 'RH',
+adress = '1750 Rue Crevier',
+province = 'QC',
+postal_code = 'H4L2X5',
+phone = '5665954526',
+email = 'Oumar@gmail.com'
+WHERE firstname = 'Oumar' AND lastname = 'Moussa';
+
+UPDATE users SET
+designation = 'Consultant',
+adress = '674 Van horne',
+province = 'NS',
+postal_code = 'B4V4V5',
+phone = '7854665265',
+email = 'Foka@ccnb.ca'
+WHERE firstname = 'Dupont' AND lastname = 'Poupi';

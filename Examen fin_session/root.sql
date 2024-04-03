@@ -66,3 +66,9 @@ GRANT INSERT, SELECT ON epharmacy.cart_product TO 'pharma'@'localhost';
 -- apres avoir executer les commandes
 REVOKE INSERT, SELECT ON epharmacy.* FROM 'pharma'@'localhost';
 
+-- Exercice modification des donnees(permissions)
+GRANT UPDATE ON epharmacy.users TO 'pharma'@'localhost';
+-- apres avoir executer les commandes
+REVOKE UPDATE ON epharmacy.* FROM 'pharma'@'localhost';
+
+
