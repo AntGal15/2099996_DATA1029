@@ -15,3 +15,12 @@ SELECT CONCAT(u.firstname, ' ', u.lastname) AS "Nom complet", AVG(TIMESTAMPDIFF(
 FROM users u
 JOIN connection_history ch ON u.id = ch.user_id
 GROUP BY u.id;
+
+-- exercice 5
+SELECT r.name AS "Nom du role"
+FROM connection_history ch
+JOIN users u ON ch.user_id = u.id
+JOIN roles r ON u.role_id = r.id
+GROUP BY r.name
+ORDER BY SUM(TIME_TO_SEC(ch.onsite_time)) DESC
+LIMIT 1;
