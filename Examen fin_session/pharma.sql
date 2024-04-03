@@ -36,3 +36,10 @@ JOIN (
     ORDER BY total_quantity DESC
     LIMIT 3
 ) cp ON p.id = cp.product_id;
+
+-- Exercice 7
+SELECT w.name AS Entrepot, COALESCE(SUM(cp.quantity * p.price), 0) AS "Chiffre d'affaire"
+FROM warehouses w
+LEFT JOIN products p ON w.id = p.warehouse_id
+LEFT JOIN cart_product cp ON p.id = cp.product_id
+GROUP BY w.id;
