@@ -33,3 +33,9 @@ GRANT SELECT ON epharmacy.products TO 'pharma'@'localhost';
 GRANT SELECT ON epharmacy.cart_product TO 'pharma'@'localhost';
 -- apres avoir executer les commandes
 REVOKE SELECT ON epharmacy.* FROM 'pharma'@'localhost';
+
+-- exercice 8
+GRANT UPDATE ON epharmacy.products TO 'pharma'@'localhost';
+-- apres avoir executer les commandes
+REVOKE UPDATE ON epharmacy.* FROM 'pharma'@'localhost';
+

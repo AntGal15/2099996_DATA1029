@@ -43,3 +43,8 @@ FROM warehouses w
 LEFT JOIN products p ON w.id = p.warehouse_id
 LEFT JOIN cart_product cp ON p.id = cp.product_id
 GROUP BY w.id;
+
+-- exercice 8
+UPDATE products
+SET image = 'medoc.jpg'
+WHERE description LIKE '%medical%' OR description LIKE '%medicinal%';
