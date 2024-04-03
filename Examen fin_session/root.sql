@@ -55,3 +55,14 @@ GRANT ALTER ON epharmacy.users TO 'pharma'@'localhost';
 -- apres avoir executer les commandes
 REVOKE ALTER ON epharmacy.* FROM 'pharma'@'localhost';
 
+-- exercice 12
+GRANT INSERT ON epharmacy.users TO 'pharma'@'localhost';
+GRANT INSERT ON epharmacy.orders TO 'pharma'@'localhost';
+GRANT INSERT ON epharmacy.invoices TO 'pharma'@'localhost';
+GRANT INSERT ON epharmacy.invoice_elements TO 'pharma'@'localhost';
+GRANT INSERT ON epharmacy.connection_history TO 'pharma'@'localhost';
+GRANT INSERT ON epharmacy.carts TO 'pharma'@'localhost';
+GRANT INSERT, SELECT ON epharmacy.cart_product TO 'pharma'@'localhost';
+-- apres avoir executer les commandes
+REVOKE INSERT, SELECT ON epharmacy.* FROM 'pharma'@'localhost';
+

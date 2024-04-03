@@ -69,3 +69,47 @@ DELIMITER ;
 -- exercice 11
 ALTER TABLE users
 ADD CONSTRAINT unique_email UNIQUE (email);
+
+
+-- exercice 12
+start transaction;
+INSERT INTO users (firstname, lastname, password,adress, city, province, country, postal_code,phone, email,role_id, gender,image) 
+VALUES ('Alain', 'Foka', '',"72 McLaughlin Dr", "Moncton", "New-Brunswick", "Canada", "E1A2LP", "7154365275",'AlainFoka@email.com',"3", "MALE", "male.jpg");
+
+INSERT INTO cart_product (cart_id, product_id, quantity, total, tax, quantity_remainder)
+VALUES
+(1, 1, 4, 40, 4, 4),
+(1, 2, 5, 25, 2.5, 5),
+(1, 3, 7, 70, 7, 7),
+(2, 4, 5, 50, 5, 5),
+(2, 5, 3, 30, 3, 3),
+(2, 6, 4, 40, 4, 4),
+(3, 7, 1, 10, 1, 1),
+(3, 8, 2, 20, 2, 2),
+(3, 9, 10, 100, 10, 10);
+
+INSERT INTO orders (customer_id, order_date, total_amount, status, user_id, cart_id)
+VALUES -- le id de mohammed est 2
+(4, NOW(), (SELECT SUM(total) FROM cart_product WHERE cart_id = 1), 1, 2, 1),
+(7, NOW(), (SELECT SUM(total) FROM cart_product WHERE cart_id = 2), 1, 2, 2),
+(4, NOW(), (SELECT SUM(total) FROM cart_product WHERE cart_id = 3), 1, 2, 3);
+
+INSERT INTO invoices (montant, tax, users_id)
+VALUES
+((SELECT SUM(total) FROM cart_product WHERE cart_id = 1), 0.1, 4),
+((SELECT SUM(total) FROM cart_product WHERE cart_id = 2), 0.1, 7),
+((SELECT SUM(total) FROM cart_product WHERE cart_id = 3), 0.1, 4);
+
+INSERT INTO connection_history (login_date, logout_date, onsite_time, user_id)
+VALUES
+(NOW(), NOW(), '00:30:00', 4),
+(NOW(), NOW(), '00:45:00', 7),
+(NOW(), NOW(), '01:00:00', 4);
+
+INSERT INTO carts (user_id, actif)
+VALUES
+(4, 1),
+(7, 1),
+(4, 1);
+
+commit;
