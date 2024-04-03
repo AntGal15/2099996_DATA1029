@@ -5,3 +5,5 @@
 -- l'insertion de données sans contrôle de référence. La ligne 440  active la vérification des contraintes
 -- de clé étrangère, garantissant l'intégrité référentielle des données. Elle doit être 
 -- utilisée après des opérations de manipulation de données pour maintenir la cohérence de la base de données.
+
+-- exercice 3 est dans le fichier root.sql
